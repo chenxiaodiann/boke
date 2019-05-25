@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <title>【读书笔记】《JavaScript权威指南》第7章数组 | 积极丶废人</title>
+    <meta name="description" content="当你的才华还撑不起你的野心时，那你就应该静下心学习" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="【读书笔记】《JavaScript权威指南》第7章数组 | 积极丶废人" />
+    <meta property="og:site_name" content="【读书笔记】《JavaScript权威指南》第7章数组 | 积极丶废人" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="【读书笔记】《JavaScript权威指南》第7章数组 | 积极丶废人" />
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b18419eb.css" as="style"><link rel="preload" href="/assets/js/app.9a86737b.js" as="script"><link rel="preload" href="/assets/js/1.20733ae8.js" as="script"><link rel="preload" href="/assets/js/14.10cb1472.js" as="script"><link rel="preload" href="/assets/js/5.280d8707.js" as="script"><link rel="preload" href="/assets/js/7.d418f3a5.js" as="script"><link rel="preload" href="/assets/js/9.74c5cb56.js" as="script"><link rel="preload" href="/assets/js/6.e9f6114d.js" as="script"><link rel="preload" href="/assets/js/21.9219528f.js" as="script"><link rel="preload" href="/assets/js/13.0595697d.js" as="script"><link rel="preload" href="/assets/js/15.7e6de91b.js" as="script"><link rel="prefetch" href="/assets/js/10.4bbb0869.js"><link rel="prefetch" href="/assets/js/11.55b5b2b9.js"><link rel="prefetch" href="/assets/js/12.bb948427.js"><link rel="prefetch" href="/assets/js/16.b20ac308.js"><link rel="prefetch" href="/assets/js/17.85306fd3.js"><link rel="prefetch" href="/assets/js/18.879f7cd2.js"><link rel="prefetch" href="/assets/js/19.d4e67bdb.js"><link rel="prefetch" href="/assets/js/20.5851ca0d.js"><link rel="prefetch" href="/assets/js/22.f7987122.js"><link rel="prefetch" href="/assets/js/23.86ce02d7.js"><link rel="prefetch" href="/assets/js/24.a524f1c2.js"><link rel="prefetch" href="/assets/js/4.c2047cd8.js"><link rel="prefetch" href="/assets/js/8.390195f0.js"><link rel="prefetch" href="/assets/js/vendors~search.b9e4cff6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b18419eb.css">
+  </head>
+  <body>
+    <div id="loader-wrapper" style="display: none;opacity:0">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div id="app" data-server-rendered="true"><div style="height:100%;" data-v-766e6b56><section class="el-container main-container" data-v-766e6b56><aside class="el-aside menu" style="width:auto;" data-v-1328b73c data-v-766e6b56><ul role="menubar" class="menu-wrap el-menu" style="background-color:;" data-v-1328b73c><li data-v-1328b73c><div class="brand-wrap" style="background-image:url(/img/brand.jpg);" data-v-1328b73c><div class="brand" data-v-1328b73c><a href="/" class="avatar waves-effect waves-circle waves-light router-link-active" data-v-1328b73c><img src="/img/avatar.jpg" data-v-1328b73c></a> <hgroup class="introduce" data-v-1328b73c><div class="nickname" data-v-1328b73c>积极丶废人</div> <a title="1115071763@qq.com" class="mail" data-v-1328b73c>1115071763@qq.com</a></hgroup></div></div></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-1328b73c><i class="iconfont icon-home" data-v-1328b73c></i> <span class="item-title" data-v-1328b73c>主页</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-1328b73c><i class="iconfont icon-biaoqian" data-v-1328b73c></i> <span class="item-title" data-v-1328b73c>标签分类</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-1328b73c><i class="iconfont icon-wenzhang" data-v-1328b73c></i> <span class="item-title" data-v-1328b73c>时间归档</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-1328b73c><i class="iconfont icon-github" data-v-1328b73c></i> <span class="item-title" data-v-1328b73c>Github</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-1328b73c><i class="iconfont icon-aboutme" data-v-1328b73c></i> <span class="item-title" data-v-1328b73c>自我介绍</span></li></ul></aside> <section class="el-container container-warp" data-v-766e6b56><header id="topHeader" class="el-header top-header" style="height:60px;padding-left:260px;" data-v-2201c037 data-v-766e6b56><div class="header-warp el-row is-align-middle el-row--flex" data-v-2201c037><div class="el-col el-col-12 el-col-xs-7" data-v-2201c037><div class="el-row is-align-middle el-row--flex" data-v-2201c037><div class="el-col el-col-2" data-v-2201c037><button type="button" class="el-button el-button--primary is-circle" data-v-2201c037><!----><!----><span><i class="iconfont icon-caidan" data-v-2201c037></i></span></button></div></div></div> <div class="el-col el-col-20 el-col-xs-24" data-v-2201c037><div class="grid-content bg-purple-light" data-v-2201c037><div class="el-row is-justify-end is-align-middle el-row--flex" data-v-2201c037><div class="el-col el-col-13 el-col-xs-24 el-col-sm-21 el-col-md-17 el-col-lg-13" data-v-2201c037><div aria-haspopup="listbox" role="combobox" aria-owns="el-autocomplete-2131" class="el-autocomplete search-input" data-v-2201c037><div class="el-input el-input--small el-input--suffix"><!----><input type="text" autocomplete="off" valueKey="value" popperClass="search-popper" placeholder="搜搜看" fetchSuggestions="function () { [native code] }" debounce="300" placement="bottom-start" popperAppendToBody="true" value="" class="el-input__inner"><!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-input__icon el-icon-search search-ico" data-v-2201c037></i><!----></span><!----></span><!----></div><div role="region" class="el-autocomplete-suggestion el-popper search-popper" style="width:;display:none;"><div class="el-scrollbar"><div class="el-autocomplete-suggestion__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><ul class="el-scrollbar__view el-autocomplete-suggestion__list"></ul></div><div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="width:0;transform:translateX(0%);ms-transform:translateX(0%);webkit-transform:translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical"><div class="el-scrollbar__thumb" style="height:0;transform:translateY(0%);ms-transform:translateY(0%);webkit-transform:translateY(0%);"></div></div></div></div></div></div></div></div></div></div></header> <main class="el-main my-main" style="margin-left:240px;" data-v-5af13904 data-v-766e6b56><div class="content-header index-header" data-v-f1164112 data-v-5af13904><div class="container fade-scale in" data-v-f1164112><h1 id="conentHeader" class="title" data-v-f1164112>【读书笔记】《JavaScript权威指南》第7章数组</h1> <h5 class="subtitle" data-v-f1164112>最后更新时间：2019-05-25 13:14:20</h5></div></div> <div data-v-73670f68 data-v-5af13904 data-v-5af13904><div class="post-content el-row is-justify-center el-row--flex" data-v-73670f68><div id="post-card" class="post-card el-col el-col-16 el-col-xs-24 el-col-sm-23 el-col-md-23 el-col-lg-16" data-v-73670f68><div class="content default" data-v-73670f68><h1 id="html5"><a href="#html5" aria-hidden="true" class="header-anchor">#</a> html5</h1> <h2 id="新增标签"><a href="#新增标签" aria-hidden="true" class="header-anchor">#</a> 新增标签</h2> <h3 id="结构标签"><a href="#结构标签" aria-hidden="true" class="header-anchor">#</a> 结构标签</h3> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span> 标记定义一个页面或一个区域的头部
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span> 标记定义一个区域
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span> 标记定义一个页面或一个区域的底部
+以上级别最高，可以嵌套以下
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">&gt;</span></span> 标记定义页面内容的部分的侧边栏
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span> 标记定义一篇文章
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span> 标记定义一组媒体内容以及它们的标题
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hgroup</span><span class="token punctuation">&gt;</span></span> 标记定义文件中一个区域的相关信息
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span> 标记定义导航栏链接
+以上全部不可互相嵌套，第二部分里面可嵌套以下
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span> 标记定义figure元素的标题
+header/section/aside/article/footer 不要嵌套在里面
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="多媒体标签"><a href="#多媒体标签" aria-hidden="true" class="header-anchor">#</a> 多媒体标签</h3> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>viodeo</span><span class="token punctuation">&gt;</span></span> 定义视频，比如电影片段或其他视频流 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span><span class="token punctuation">&gt;</span></span>  定义声音，比如音乐或其他音频流    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span> 媒介元素，定义媒介资源。允许规定可替换的音频文件，供不同浏览器去选择适合他的文件类型
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>embed</span><span class="token punctuation">&gt;</span></span>  定义嵌入的内容，比如插件，比如音视频     
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="web应用标签"><a href="#web应用标签" aria-hidden="true" class="header-anchor">#</a> web应用标签</h3> <h4 id="状态标签"><a href="#状态标签" aria-hidden="true" class="header-anchor">#</a> 状态标签</h4> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meter</span><span class="token punctuation">&gt;</span></span>标签定义度量衡。仅用于已知最大和最小值的度量
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>progress</span><span class="token punctuation">&gt;</span></span> 标签定义运行中的进度（进程）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="列表标签"><a href="#列表标签" aria-hidden="true" class="header-anchor">#</a> 列表标签</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;datalist&gt;为input标记定义一个下拉表格，配合option
+&lt;details&gt;标记定义一个元素的详细内容 ，配合summary
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="menu"><a href="#menu" aria-hidden="true" class="header-anchor">#</a> Menu</h4> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span><span class="token punctuation">&gt;</span></span>  命令列表（目前所有主流浏览器都不支持）
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menutitem</span><span class="token punctuation">&gt;</span></span>menu命令列表标签（只有火狐支持）
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>command</span><span class="token punctuation">&gt;</span></span>menu标记定义一个命令按钮（目前只有 Internet Explorer 支持）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="注释标签"><a href="#注释标签" aria-hidden="true" class="header-anchor">#</a> 注释标签</h4> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span> 标记定义注释或音标
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="其他标签"><a href="#其他标签" aria-hidden="true" class="header-anchor">#</a> 其他标签</h4> <div class="language-html line-numbers-mode"><pre class="language-html"><code>mark  标记定义有标记的文本（黄色选中状态）
+output 标记定义一些输出类型，计算表单结果配合oninput事件
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="重定义标签"><a href="#重定义标签" aria-hidden="true" class="header-anchor">#</a> 重定义标签</h4> <div class="language-html line-numbers-mode"><pre class="language-html"><code>显示不变，只是表达的含义进行了重新定义的标签
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">&gt;</span></span> 内联 文本 通常是粗体 没有传递表示重要的意思
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token punctuation">&gt;</span></span>内联 斜体 没有传递表示重要的意思
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">&gt;</span></span> 可以同的details 与 figure 一同使用 定义包含文本 dialog也可用
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">&gt;</span></span> 可以同的details 与 figure 一同使用 汇总细节 dialog也可用
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">&gt;</span></span>是标题，dd理解为 li
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span> 表示主题结束 而不是水平线
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span><span class="token punctuation">&gt;</span></span>不只是定义<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span> 增加定义用户界面的菜单 配合commond 或者menuitem使用
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">&gt;</span></span>表示批注 表示小字体 例如打印 注释或者法律条款 big已删除
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span> 表示重要性而不是强调符号
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="属性变化"><a href="#属性变化" aria-hidden="true" class="header-anchor">#</a> 属性变化</h2> <h3 id="input"><a href="#input" aria-hidden="true" class="header-anchor">#</a> input</h3> <h5 id="电子邮件-input类型"><a href="#电子邮件-input类型" aria-hidden="true" class="header-anchor">#</a> 电子邮件 input类型</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>email 输入类型用于应该包含电邮地址的输入字段。 当提交表单时，会自动地对 email 字段的值进行验证。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>email<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>email<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+在手机端有不同 在键盘的表现上
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="统一资源定位符url-input类型"><a href="#统一资源定位符url-input类型" aria-hidden="true" class="header-anchor">#</a> 统一资源定位符url     input类型</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>url 输入类型用于应该包含 URL 地址的输入字段。 会在提交表单时对 url 字段的值自动进行验证。
+&lt;type=&quot;url&quot; name=&quot;url&quot; &gt;
+在苹果手机端的键盘表现上有不同
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="电话号码input类型"><a href="#电话号码input类型" aria-hidden="true" class="header-anchor">#</a> 电话号码input类型</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>tel 输入类型用于应该包含电话号码的输入字段。
+&lt;type=&quot;tel&quot; name=&quot;tel&quot;&gt;
+还是在手机端的键盘上有表现
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="数字input类型"><a href="#数字input类型" aria-hidden="true" class="header-anchor">#</a> 数字input类型</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>number 输入类型用于包含数字值的输入字段。您可以设置可接受数字的限制。
+&lt;type=&quot;number&quot; name=&quot;number&quot; &gt;
+在电脑上focus时有按钮 还只能输入数字和加号减号点号和e 不能输入其他字母
+在手机端的键盘上有表现
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h5 id="日期和时间选择器"><a href="#日期和时间选择器" aria-hidden="true" class="header-anchor">#</a> 日期和时间选择器</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>date<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>user_date<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+date - 选择日、月、年
+month - 选择月、年
+week - 选择周、年
+time - 选择时间（时、分）
+datetime - 选择时间、日期、月、年（UTC 时间）
+datetime-local - 选择时间、日期、月、年（本地时间）
+手机上  只有在苹果手机上 有效果
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h5 id="radio属性值"><a href="#radio属性值" aria-hidden="true" class="header-anchor">#</a> radio属性值</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>range 输入类型用于应该包含指定范围值的输入字段。
+range 类型显示为滑块。
+您也可以设置可接受数字的限制
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>posints<span class="token punctuation">&quot;</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>10<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h5 id="saerch属性值"><a href="#saerch属性值" aria-hidden="true" class="header-anchor">#</a> saerch属性值</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- search 输入类型用于搜索字段，比如站内搜索或谷歌搜索等。
+- 搜索字段的外观与常规的文本字段无异。
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>search<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>search<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="color属性值"><a href="#color属性值" aria-hidden="true" class="header-anchor">#</a> color属性值</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- color 输入类型用于规定颜色。
+- 该输入类型允许您从拾色器中选取颜色：
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="表单属性"><a href="#表单属性" aria-hidden="true" class="header-anchor">#</a> 表单属性</h3> <h5 id="auteocomplete"><a href="#auteocomplete" aria-hidden="true" class="header-anchor">#</a> auteocomplete</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- form或input域应该拥有自动完成功能
+- 当用户在自动完成域中开始输入时，浏览器应该在该域中显示填写的选项
+- autocomplete 属性适用于 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>，以及下面的 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span> 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>no<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+- autocomplete 属性有可能在 form元素中是开启的，而在input元素中是关闭的。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h5 id="autofocus"><a href="#autofocus" aria-hidden="true" class="header-anchor">#</a> autofocus</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- 规定在页面加载时，域自动的获取焦点
+- 适用于所有<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span>标签的类型
+- 语法  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">autofocus</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>antofocus <span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="multiple"><a href="#multiple" aria-hidden="true" class="header-anchor">#</a> multiple</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- 规定输入域可选择多个值
+- 适用于以下类型的 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span> 标签：
+- email 和 file。
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>inpu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span>file</span> <span class="token attr-name">multiple</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>multiple<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+- 加上了multiple就相当于是说可以同时上传多个文件
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>inpu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span>email</span> <span class="token attr-name">multiple</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>multiple<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+- 如果不使用mutiple的话，邮箱还是可以输入多个邮箱，但整体变成一个string字符串，而不是一个数组。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h5 id="placeholder"><a href="#placeholder" aria-hidden="true" class="header-anchor">#</a> placeholder</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- 属性提供一种提示（hint） 描述输入域所期待的值
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>search<span class="token punctuation">&quot;</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Search Comtent<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+- 适用于<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span> 标签type属性值为：text search url telephone email password
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="required"><a href="#required" aria-hidden="true" class="header-anchor">#</a> required</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- 规定必须在提交之前填写输入域（不能为空）
+- required属性适用于以下类型的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span>标签：text, search, url, telephone, email, password, date, number, checkbox, radio, file
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">required</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>required<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="链接属性"><a href="#链接属性" aria-hidden="true" class="header-anchor">#</a> 链接属性</h3> <h5 id="size"><a href="#size" aria-hidden="true" class="header-anchor">#</a> size</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- sizes 属性规定被链接资源的尺寸。只有当被链接资源是图标时 (rel=&quot;icon&quot;)，才能使用该属性。该属性可接受多个值。值由空格分隔。
+-  根据不同的分辨率引用不同的sizes   因为针对高低屏幕  响应式 开发的
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">hraf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>icon.gif<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/gif(jpg,png)<span class="token punctuation">&quot;</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>16*16<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> 显示多大的图标 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h5 id="tareget"><a href="#tareget" aria-hidden="true" class="header-anchor">#</a> tareget</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- target 属性规定在何处打开页面上的所有链接。可以在每个链接中使用 target 属性来覆盖该属性。如果没有为 base 元素规定 href 属性，则 target 属性是必需的。
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>base</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>&lt;http://localhost/(绝对路径)&gt;<span class="token punctuation">&quot;</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>_blan<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>base</span><span class="token punctuation">&gt;</span></span>标签写在<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>里就可以控制  这个路径下的所有超链接都弹出一个页面
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h5 id="a-超链接"><a href="#a-超链接" aria-hidden="true" class="header-anchor">#</a> a 超链接</h5> <h6 id="media"><a href="#media" aria-hidden="true" class="header-anchor">#</a> media</h6> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- media 属性规定目标 URL 是为什么类型的媒介/设备进行优化的。
+- 该属性用于规定目标 URL 是为特殊设备（比如 iPhone）、语音或打印媒介设计的。
+- 该属性可接受多个值。
+- 只能在 href 属性存在时使用。
+- a:madia=&quot;&quot;(对设备进行优化handhelp tv 主要是告诉后台  后台方便针对不同设备 进行不同的处理)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h6 id="hreflang"><a href="#hreflang" aria-hidden="true" class="header-anchor">#</a> hreflang</h6> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- hreflang 属性规定被链接文档的语言。
+- 仅在使用 href 属性时才可以指定 hreflang 属性。和 lang 属性类似，hreflang 属性的值也是 ISO 标准的双字符语言代码。和 lang 属性不同的是，hreflang 属性不会指定标签中的内容所使用的语言，而是指定被 href 属性调用的文档所使用的语言。
+- a:hreflang=&quot;zh&quot;( 设置语言（中文） 主要告诉浏览器  浏览器自己加载)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h6 id="rel"><a href="#rel" aria-hidden="true" class="header-anchor">#</a> rel</h6> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- rel 属性规定当前文档与被链接文档之间的关系。
+- 仅在 href 属性存在时使用。
+- a:rel=&quot;external&quot;(设置链接  可以引用外部链接) 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="其他属性"><a href="#其他属性" aria-hidden="true" class="header-anchor">#</a> 其他属性</h3> <h5 id="script"><a href="#script" aria-hidden="true" class="header-anchor">#</a> script</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- script标签中defer属性规定对脚本进行延迟加载，直到页面结构加载成功后才对脚本进行加载 目前是只有ie支持
+- script标签中async实现JavaScript双线程加载，属性规定对脚本进行异步加载，
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h5 id="ol"><a href="#ol" aria-hidden="true" class="header-anchor">#</a> ol</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- ol 有序列表
+- Start--起始值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h6 id="reversed-倒叙排列"><a href="#reversed-倒叙排列" aria-hidden="true" class="header-anchor">#</a> Reversed--倒叙排列</h6> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- reversed 属性是逻辑属性。
+- 当使用该属性时，它规定列表属性为降序 (9, 8, 7...)，而不是升序 (1, 2, 3...)。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>适用于HTML5新增标签的简洁解决兼容性的方式：header、nav、section、aside、article、footer等变块diasplay:block</p> <h5 id="html"><a href="#html" aria-hidden="true" class="header-anchor">#</a> html</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- manifest =&quot;cache.manifest&quot;（定义页面缓存离线应用文件）
+- 语法：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">manifest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>index.（cache.）manifest<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h5 id="style-与结构与表现分离背驰-应该单独存储"><a href="#style-与结构与表现分离背驰-应该单独存储" aria-hidden="true" class="header-anchor">#</a> style 与结构与表现分离背驰 应该单独存储</h5> <div class="language-html line-numbers-mode"><pre class="language-html"><code>- scoped：内嵌css 可以写在任何位置 ，里面写css 不提倡
+- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">......</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="本地缓存和离线缓存"><a href="#本地缓存和离线缓存" aria-hidden="true" class="header-anchor">#</a> 本地缓存和离线缓存</h2> <h3 id="wed-storage"><a href="#wed-storage" aria-hidden="true" class="header-anchor">#</a> wed Storage</h3> <p><strong>localStorage</strong> <strong>sessionStorage</strong></p> <h4 id="相同"><a href="#相同" aria-hidden="true" class="header-anchor">#</a> 相同</h4> <h6 id="方法"><a href="#方法" aria-hidden="true" class="header-anchor">#</a> 方法</h6> <ol><li>使用setItem方法设置存储内容</li> <li>使用getItem方法获取存储内容</li> <li>使用removeItem方法删除存储内容</li> <li>使用clear方法清楚所有内容</li> <li>使用key方法获取存储字段</li></ol> <h6 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h6> <p>使用leng 属性获取存储内容个数</p> <h4 id="不同"><a href="#不同" aria-hidden="true" class="header-anchor">#</a> 不同</h4> <h6 id="存储时效"><a href="#存储时效" aria-hidden="true" class="header-anchor">#</a> 存储时效</h6> <ul><li>localStorage 存储会持久化</li> <li>sessionStorage 存储会在网页会话结束后失效 标签页的关闭数据就会消失</li></ul> <h6 id="存储容量"><a href="#存储容量" aria-hidden="true" class="header-anchor">#</a> 存储容量</h6> <p>localStorage 容量一般在2-5m左右</p> <p>sessionStorage 存储容量不一，部分浏览器不设限</p> <p>::: warning 注意
+1.注意存储容量超出配额 抛出 QuotaExceededError异常
+2.存储类型的限制 仅能存储字符串 注意类型的转换
+sessinStorage失效机制 刷新页面并不会失效 相同URL不同标签页不能共享sessionStorage
+:::</p> <h4 id="带有过期机制的localstorage的功能需求"><a href="#带有过期机制的localstorage的功能需求" aria-hidden="true" class="header-anchor">#</a> 带有过期机制的localStorage的功能需求</h4> <p>1.可以设置数据的存储时间</p> <p>2.过期数据清理</p> <p>3.自行维护存储空间</p> <h3 id="indexeddb"><a href="#indexeddb" aria-hidden="true" class="header-anchor">#</a> IndexedDB</h3> <h4 id="概念"><a href="#概念" aria-hidden="true" class="header-anchor">#</a> 概念</h4> <p>IndexedDB 很适合存储大量数据，它的 API 是异步调用的。IndexedDB 使用索引存储数据，各种数据库操作放在事务中执行。IndexedDB 甚至还支持简单的数据类型。IndexedDB 比 localstorage 强大得多，但它的 API 也相对复杂。对于简单的数据，你应该继续使用 localstorage，但当你希望存储大量数据时，IndexedDB 会明显的更适合，IndexedDB 能提供你更为复杂的查询数据的方式。</p> <h4 id="特性"><a href="#特性" aria-hidden="true" class="header-anchor">#</a> 特性</h4> <h6 id="对象仓库"><a href="#对象仓库" aria-hidden="true" class="header-anchor">#</a> 对象仓库</h6> <p>有了数据库后我们自然希望创建一个表用来存储数据，但 indexedDB 中没有表的概念，而是 objectStore，一个数据库中可以包含多个 objectStore，objectStore 是一个灵活的数据结构，可以存放多种类型数据。也就是说一个 objectStore 相当于一张表，里面存储的每条数据和一个键相关联。我们可以使用每条记录中的某个指定字段作为键值（keyPath），也可以使用自动生成的递增数字作为键值（keyGenerator），也可以不指定。选择键的类型不同，objectStore 可以存储的数据结构也有差异。</p> <h6 id="事务性"><a href="#事务性" aria-hidden="true" class="header-anchor">#</a> 事务性</h6> <p>在 indexedDB 中，每一个对数据库操作是在一个事务的上下文中执行的。事务范围一次影响一个或多个 object stores，你通过传入一个 object store 名字的数组到创建事务范围的函数来定义。例如：db.transaction(storeName, 'readwrite')，创建事务的第二个参数是事务模式。当请求一个事务时,必须决定是按照只读还是读写模式请求访问。</p> <h6 id="基于请求"><a href="#基于请求" aria-hidden="true" class="header-anchor">#</a> 基于请求</h6> <p>对 indexedDB 数据库的每次操作，描述为通过一个请求打开数据库,访问一个 object store，再继续。IndexedDB API 天生是基于请求的,这也是 API 异步本性指示。对于你在数据库执行的每次操作,你必须首先为这个操作创建一个请求。当请求完成,你可以响应由请求结果产生的事件和错误。</p> <h6 id="异步"><a href="#异步" aria-hidden="true" class="header-anchor">#</a> 异步</h6> <p>在 IndexedDB 大部分操作并不是我们常用的调用方法，返回结果的模式，而是请求—响应的模式，所谓异步 API 是指并不是这条指令执行完毕，我们就可以使用 request.result 来获取 indexedDB 对象了，就像使用 ajax 一样，语句执行完并不代表已经获取到了对象，所以我们一般在其回调函数中处理。</p> <h4 id="接口"><a href="#接口" aria-hidden="true" class="header-anchor">#</a> 接口</h4> <h5 id="idbfactory-数据库工厂-负责打开或创建数据库"><a href="#idbfactory-数据库工厂-负责打开或创建数据库" aria-hidden="true" class="header-anchor">#</a> IDBFactory 数据库工厂 负责打开或创建数据库</h5> <p>提供对数据库的访问。这是全局对象实现的接口indexedDB，因此是API的入口点。</p> <h6 id="实现"><a href="#实现" aria-hidden="true" class="header-anchor">#</a> 实现</h6> <p>实现接口的对象是window.indexedDB 而不是直接使用IDBFactory。</p> <h6 id="方法-2"><a href="#方法-2" aria-hidden="true" class="header-anchor">#</a> 方法</h6> <p>IDBFactory.open 方法发送一个打开或者创建一个数据库的请求</p> <p>IDBFactory.deleteDatabase 发送一个删除数据库的请求。</p> <p>IDBFactory.cmp 一种比较两个键并返回指示哪一个值更大的结果的方法。</p> <h5 id="idbdatabase-数据库"><a href="#idbdatabase-数据库" aria-hidden="true" class="header-anchor">#</a> IDBDatabase 数据库</h5> <p>表示与数据库的连接。这是获取数据库事务的唯一方法。检索和修改数据</p> <h6 id="方法-3"><a href="#方法-3" aria-hidden="true" class="header-anchor">#</a> 方法</h6> <p>IDBDatabase.close 方法关闭数据库。</p> <p>IDBDatabase.createObjectStore 方法创建 store，相当于表</p> <p>IDBDatabase.transaction 开启一个事务。</p> <p>IDBDatabase.deleteObjectStore()在连接的数据库中销毁具有给定名称的对象存储库以及引用它的任何索引。</p> <h6 id="属性-2"><a href="#属性-2" aria-hidden="true" class="header-anchor">#</a> 属性</h6> <p>IDBDatabase. name   只读DOMString包含已连接数据库名称的A.</p> <p>IDBDatabase.version  只读一个64位整数，包含已连接数据库的版本。首次创建数据库时，此属性为空字符串。</p> <p>IDBDatabase.objectStoreNames  只读一个DOMStringList包含的名称的列表对象存储当前连接的数据库中。</p> <h6 id="事件处理时发生的程序"><a href="#事件处理时发生的程序" aria-hidden="true" class="header-anchor">#</a> 事件处理时发生的程序</h6> <p>IDBDatabase.onabort中止访问数据库时触发。</p> <p>IDBDatabase.oncloseclose事件发生时触发; 当数据库意外关闭时，例如在应用程序关闭期间，会发生这种情况。</p> <p>IDBDatabase.onerror访问数据库失败时触发。</p> <p>IDBDatabase.onversionchange当数据库结构发生更改时触发（IDBOpenDBRequest.onupgradeneeded事件或IDBFactory.deleteDatabase()在其他地方请求（最可能在同一台计算机上的另一个窗口/选项卡中）。这与版本更改事务（请参阅参考资料IDBVersionChangeEvent）不同，但它是相关的。</p> <h5 id="idbtransaction-事务"><a href="#idbtransaction-事务" aria-hidden="true" class="header-anchor">#</a> IDBTransaction 事务</h5> <p>表示事务。您在数据库上创建事务，指定范围（例如您要访问的对象存储），并确定所需的访问类型（只读或读写）。</p> <h6 id="方法-4"><a href="#方法-4" aria-hidden="true" class="header-anchor">#</a> 方法</h6> <p>IDBTransaction.objectStore 返回IDBObjectStore表示对象存储的对象，该对象存储是此事务范围的一部分。</p> <h5 id="idbobjectstore-数据库表"><a href="#idbobjectstore-数据库表" aria-hidden="true" class="header-anchor">#</a> IDBObjectStore 数据库表</h5> <p>表示允许访问IndexedDB数据库中的一组数据的对象存储，通过主键查找。</p> <h6 id="方法-5"><a href="#方法-5" aria-hidden="true" class="header-anchor">#</a> 方法</h6> <p>IDBObjectStore.add()</p> <p>返回一个IDBRequest对象，这是为了向对象库添加新记录。</p> <p>IDBObjectStore.clear()</p> <p>创建并立即返回一个IDBRequest对象，并在单独的线程中清除此对象库。这是为了从对象库中删除所有当前记录。</p> <p>IDBObjectStore.delete()</p> <p>返回一个IDBRequest对象，并在一个单独的线程中删除由指定键选择的商店对象。这用于从对象库中删除单个记录。</p> <p>IDBObjectStore.get()</p> <p>返回一个IDBRequest对象，并在单独的线程中返回由指定键选择的存储对象库。这用于从对象库中检索特定记录。</p> <p>IDBObjectStore.getAll()</p> <p>返回一个IDBRequest 对象，如果没有给出参数，则检索与指定参数匹配的对象库中的所有对象或商店中的所有对象。</p> <p>IDBObjectStore.getKey()</p> <p>返回一个IDBRequest对象，并在一个单独的线程中检索并返回与指定参数匹配的对象中的对象的记录键。</p> <p>IDBObjectStore.openCursor()</p> <p>返回一个IDBRequest对象，并在一个单独的线程中返回一个新IDBCursorWithValue对象。用于通过主键和游标迭代对象存储。</p> <p>IDBObjectStore.openKeyCursor()</p> <p>返回一个IDBRequest对象，并在一个单独的线程中返回一个新对象IDBCursor。用于使用键遍历对象库。</p> <p>IDBObjectStore.put()</p> <p>返回一个IDBRequest对象，并且，在一个单独的线程，创建了一个结构化的克隆的value，并存储在对象存储克隆值。这是用于在事务模式下更新对象库中的现有记录readwrite。</p> <p>IDBObjectStore.count()</p> <p>返回一个IDBRequest对象，并在一个单独的线程中返回与提供的键或匹配的记录总数IDBKeyRange。如果未提供参数，则返回商店中的记录总数。</p> <h5 id="idbrequest-是所有indexeddb操作的返回值，indexddb操作请求"><a href="#idbrequest-是所有indexeddb操作的返回值，indexddb操作请求" aria-hidden="true" class="header-anchor">#</a> IDBRequest 是所有indexedDB操作的返回值，indexdDB操作请求</h5> <p>通用接口，用于处理数据库请求并提供对结果的访问。</p> <h6 id="属性-3"><a href="#属性-3" aria-hidden="true" class="header-anchor">#</a> 属性</h6> <p>IDBRequest.error 只读DOMException如果请求失败，则返回a ，指示出错的地方。</p> <p>IDBRequest.result 只读返回请求的结果。如果请求失败且结果不可用，则抛出InvalidStateError异常。</p> <p>IDBRequest.source 只读请求的来源，例如a IDBIndex或IDBObjectStore。如果不存在源（例如调用时IDBFactory.open），则返回null。</p> <h6 id="事件处理程序"><a href="#事件处理程序" aria-hidden="true" class="header-anchor">#</a> 事件处理程序</h6> <p>IDBRequest.onerror 错误事件的事件处理程序。IDBRequest.onsuccess 成功事件的事件处理程序。</p> <h5 id="idbindex-索引"><a href="#idbindex-索引" aria-hidden="true" class="header-anchor">#</a> IDBIndex 索引</h5> <p>还允许访问IndexedDB数据库中的数据子集，但使用索引来检索记录而不是主键。这有时比使用更快IDBObjectStore。</p> <h6 id="tip基本逻辑"><a href="#tip基本逻辑" aria-hidden="true" class="header-anchor">#</a> ::: tip基本逻辑</h6> <p>IDBFactory,open负责创建数据库的对象，返回IDBDatabase对象实列,通过IDBDatabase.transaction 开启事务，获得IDBTransaction对象的实列，通过IDBTransaction.objectStore获取数据库表 数据表的各种方法对数据进行增删改查， 方法返回的对象时IDBRequest对象，对数据进行结果的查询访问</p> <p>:::</p> <h5 id="不是重要"><a href="#不是重要" aria-hidden="true" class="header-anchor">#</a> 不是重要</h5> <h6 id="idbenvironment"><a href="#idbenvironment" aria-hidden="true" class="header-anchor">#</a> IDBEnvironment</h6> <p>提供对IndexedDB功能的访问。它由window和worker对象实现。此接口不是2.0规范的一部分。</p> <h6 id="idbopendbrequest"><a href="#idbopendbrequest" aria-hidden="true" class="header-anchor">#</a> IDBOpenDBRequest</h6> <p>表示打开数据库的请求。</p> <h6 id="idbcursor"><a href="#idbcursor" aria-hidden="true" class="header-anchor">#</a> IDBCursor</h6> <p>迭代对象存储和索引。</p> <h6 id="idbcursorwithvalue"><a href="#idbcursorwithvalue" aria-hidden="true" class="header-anchor">#</a> IDBCursorWithValue</h6> <p>迭代对象存储和索引并返回游标的当前值。</p> <h6 id="idbkeyrange"><a href="#idbkeyrange" aria-hidden="true" class="header-anchor">#</a> IDBKeyRange</h6> <p>定义可用于从特定范围内的数据库检索数据的键范围。</p> <h6 id="idblocaleawarekeyrange"><a href="#idblocaleawarekeyrange" aria-hidden="true" class="header-anchor">#</a> IDBLocaleAwareKeyRange</h6> <p>定义一个键范围，可用于从特定范围内的数据库中检索数据，并根据为特定索引指定的语言环境的规则进行排序（请参阅createIndex()的optionalParameters。）。此接口不是2.0规范的一部分。</p> <h4 id="完整案列"><a href="#完整案列" aria-hidden="true" class="header-anchor">#</a> 完整案列</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;./lib/art_template.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;label for=&quot;name&quot;&gt;用户名&lt;/label&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;label for=&quot;phone&quot;&gt;电话&lt;/label&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;phone&quot; id=&quot;phone&quot;&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;label for=&quot;address&quot;&gt;地址&lt;/label&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;input type=&quot;text&quot; name=&quot;address&quot; id=&quot;address&quot;&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;input type=&quot;button&quot; value=&quot;添加用户&quot; id=&quot;btnAdd&quot; onclick=&quot;addPerson()&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;id&lt;/th&gt;
+        &lt;th&gt;name&lt;/th&gt;
+        &lt;th&gt;address&lt;/th&gt;
+        &lt;th&gt;phone&lt;/th&gt;
+        &lt;th&gt;编辑&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id=&quot;tbd&quot;&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;script id=&quot;tbTmpl&quot; type=&quot;text/html&quot;&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{{id}}&lt;/td&gt;
+      &lt;td&gt;{{name}}&lt;/td&gt;
+      &lt;td&gt;{{phone}}&lt;/td&gt;
+      &lt;td&gt;{{address}}&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;修改&lt;/a&gt;
+      &lt;a href=&quot;#&quot; onclick=&quot;delById({{id}})&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/script&gt;
+  &lt;script&gt;
+    var db, dbName = 'demoDb', dbVersion = 1, personStore = 'person';
+    // 创建indexedDB对象，兼容各种浏览器
+    var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+    if (!indexedDB) {
+      console.log(&quot;你的浏览器不支持IndexedDB&quot;);
+    }
+
+    openIndexedDB(loadTableData);
+
+    // 配合游标遍历表中数据，并配合art-template生成html
+    function loadTableData() {
+      document.getElementById('tbd').innerHTML = &quot;&quot;;
+      var trans = db.transaction(personStore, 'readwrite');
+      var store = trans.objectStore(personStore);
+      var cursorRequest = store.openCursor();
+      cursorRequest.onsuccess = function (e) {
+        var cursor = e.target.result;
+        if (cursor) {
+          var html = template('tbTmpl', cursor.value);
+          document.getElementById('tbd').innerHTML += html;
+          cursor.continue(); // 游标继续往下 搜索，重复触发 onsuccess方法，如果到到返回null
+        }
+      }
+    }
+
+    function delById(id) {
+      if (!db || !id) {
+        return;
+      }
+      // 创建一个事务
+      var transaction = db.transaction(personStore, 'readwrite');
+
+      // 通过事务来获取store
+      var store = transaction.objectStore(personStore);
+
+      // 删除请求
+      var delPersonRequest = store.delete(id);
+      delPersonRequest.onsuccess = function (e) {
+        loadTableData(); // 删除成功后，重新加载数据
+      }
+      delPersonRequest.onerror = function (e) {
+        console.log(e.target.error);
+      }
+    }
+
+    // 添加用户
+    function addPerson() {
+      if (!db) {
+        return;
+      }
+      var pName = document.getElementById('name').value;
+      var pPhone = document.getElementById('phone').value;
+      var pAddress = document.getElementById('address').value;
+      // 创建一个事务
+      var transaction = db.transaction(personStore, 'readwrite');
+
+      // 通过事务来获取store
+      var store = transaction.objectStore(personStore);
+
+      var addPersonRequest = store.add({ name: pName, phone: pPhone, address: pAddress });
+      addPersonRequest.onsuccess = function (e) {
+        console.log(e.target);
+        loadTableData(); // 添加成功后重新加载数据
+      }
+      addPersonRequest.onerror = function (e) {
+        console.log(e.target.error);
+      }
+    }
+
+    // 打开数据库
+    function openIndexedDB(callback) {
+      // 打开一个数据库
+      var request = indexedDB.open(dbName, dbVersion);
+
+      // 打开失败
+      request.onerror = function (e) {
+        console.log(e.currentTarget.error.message);
+      };
+
+      // 打开成功！
+      request.onsuccess = function (e) {
+        db = e.target.result;
+        console.log('成功打开DB');
+        callback();
+      };
+
+      // 打开成功后，如果版本有变化自动执行以下事件
+      request.onupgradeneeded = function (e) {
+        var db = e.target.result;
+        if (!db.objectStoreNames.contains(personStore)) {
+          console.log(&quot;我需要创建一个新的存储对象&quot;);
+          //如果表格不存在，创建一个新的表格（keyPath，主键 ； autoIncrement,是否自增），会返回一个对象（objectStore）
+          var objectStore = db.createObjectStore(personStore, {
+            keyPath: &quot;id&quot;,
+            autoIncrement: true
+          });
+
+          //指定可以被索引的字段，unique字段是否唯一, 指定索引可以加快搜索效率。
+          objectStore.createIndex(&quot;name&quot;, &quot;name&quot;, {
+            unique: true
+          });
+          objectStore.createIndex(&quot;phone&quot;, &quot;phone&quot;, {
+            unique: false
+          });
+        }
+        console.log('数据库版本更改为： ' + dbVersion);
+      };
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br></div></div></div> <span id="footerPost" data-v-73670f68></span></div> <div id="post-toc" class="post-toc el-col el-col-6" data-v-73670f68><h4 class="catalog-title" data-v-73670f68>TOC</h4> <div class="catalog-body" data-v-73670f68><ul id="catalog-list" class="catalog-list" data-v-73670f68></ul></div></div></div> <div class="post-nav el-row is-justify-space-around el-row--flex" data-v-73670f68><div class="post-prev el-col el-col-7" data-v-73670f68></div> <div class="post-next el-col el-col-7 el-col-lg-pull-5" data-v-73670f68><div data-v-73670f68><a href="/posts/HTML%20-%20%E5%89%AF%E6%9C%AC.html" data-v-73670f68>
+          Next
+          <i class="el-icon-arrow-right" data-v-73670f68></i></a> <p class="nav-title" data-v-73670f68>【读书笔记】《JavaScript权威指南》第7章数组</p></div></div></div> <div class="el-row is-justify-center el-row--flex" data-v-73670f68></div> <span data-v-2f4bc695 data-v-73670f68><button type="button" class="el-button toc-btn el-button--primary is-circle" data-v-2f4bc695><!----><!----><span><i class="iconfont icon-service-directory" data-v-2f4bc695></i></span></button> <button type="button" class="el-button gotop-btn el-button--primary is-circle" data-v-2f4bc695><!----><!----><span><i class="el-icon-arrow-up" data-v-2f4bc695></i></span></button></span></div></main></section> <button type="button" class="el-button gotop-btn el-button--primary is-circle" style="display:none;" data-v-75622791 data-v-766e6b56><!----><!----><span><i class="el-icon-arrow-up" data-v-75622791></i></span></button></section> <footer class="el-footer container-footer" style="height:60px;" data-v-d22517d6 data-v-766e6b56><div class="footer-warp el-row is-justify-center is-align-center el-row--flex footerMargin" data-v-d22517d6><div class="footer-top el-col el-col-24" data-v-d22517d6><p class="ellipsis" data-v-d22517d6><span data-v-d22517d6>
+          博客内容遵循
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" data-v-d22517d6>知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span></p></div> <div class="footer-bottom el-col el-col-24" data-v-d22517d6><p class="ellipsis" data-v-d22517d6><span data-v-d22517d6><span data-v-d22517d6>
+            积极丶废人 © 2018-11 ~ 2018-11
+          </span></span> <span data-v-d22517d6>
+          Power by
+          <a href="https://vuepress.vuejs.org/zh/" target="_blank" data-v-d22517d6>VuePress</a> Theme
+          <a href="https://github.com/zhhlwd/vuepress-theme-indigo-material" target="_blank" data-v-d22517d6>indigo material</a></span></p></div></div></footer> <div class="overlay" data-v-766e6b56></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9a86737b.js" defer></script><script src="/assets/js/1.20733ae8.js" defer></script><script src="/assets/js/14.10cb1472.js" defer></script><script src="/assets/js/5.280d8707.js" defer></script><script src="/assets/js/7.d418f3a5.js" defer></script><script src="/assets/js/9.74c5cb56.js" defer></script><script src="/assets/js/6.e9f6114d.js" defer></script><script src="/assets/js/21.9219528f.js" defer></script><script src="/assets/js/13.0595697d.js" defer></script><script src="/assets/js/15.7e6de91b.js" defer></script>
+  </body>
+</html>
